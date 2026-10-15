@@ -24,6 +24,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Explicit route for User Profile portal
+app.get('/profile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+});
+
 // Fallback to index.html for SPA-like client navigation
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

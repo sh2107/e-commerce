@@ -12,6 +12,7 @@ class ApiService {
       CART: 'atelier_cart_items',
       WISHLIST: 'atelier_wishlist_ids',
       ORDERS: 'atelier_customer_orders',
+      USER_PROFILE: 'atelier_user_profile',
       ACTIVE_COUPON: 'atelier_active_coupon',
       CURRENCY: 'atelier_selected_currency'
     };
@@ -30,7 +31,95 @@ class ApiService {
       localStorage.setItem(this.storageKeys.WISHLIST, JSON.stringify(["prod-001", "prod-003"]));
     }
     if (!localStorage.getItem(this.storageKeys.ORDERS)) {
-      localStorage.setItem(this.storageKeys.ORDERS, JSON.stringify([]));
+      // Seed a realistic past order for the customer
+      const initialOrders = [
+        {
+          id: "ord-seed-001",
+          orderNumber: "ELV-784912",
+          createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+          status: "In Transit",
+          trackingNumber: "DHL-ATELIER-892144",
+          estimatedDelivery: "In 2 days",
+          customer: {
+            fullName: "Alexander Vance",
+            email: "a.vance@atelier-mail.com",
+            address: "742 Evergreen Terrace, Apt 4B",
+            city: "New York",
+            postalCode: "10021",
+            country: "United States"
+          },
+          items: [
+            {
+              cartKey: "prod-001_M_Camel",
+              productId: "prod-001",
+              name: "The Oversized Camel Wool Trench",
+              price: 380,
+              image: "/assets/images/hero-coat.jpg",
+              size: "M",
+              color: { name: "Camel", hex: "#C19A6B" },
+              quantity: 1
+            }
+          ],
+          subtotal: 380,
+          discount: 0,
+          shipping: 0,
+          total: 380,
+          paymentMethod: "Visa •••• 4242"
+        }
+      ];
+      localStorage.setItem(this.storageKeys.ORDERS, JSON.stringify(initialOrders));
+    }
+    if (!localStorage.getItem(this.storageKeys.USER_PROFILE)) {
+      const defaultProfile = {
+        id: "usr-001",
+        fullName: "Alexander Vance",
+        email: "a.vance@atelier-mail.com",
+        phone: "+1 (555) 019-2834",
+        tier: "Atelier Connoisseur",
+        tierBadge: "VIP Member",
+        memberSince: "October 2024",
+        loyaltyPoints: 1450,
+        preferredCurrency: "USD",
+        sizingPreferences: {
+          topSize: "M",
+          bottomSize: "32",
+          shoeSize: "43 EU",
+          preferredFit: "Oversized"
+        },
+        addresses: [
+          {
+            id: "addr-001",
+            label: "Primary Residence",
+            isDefault: true,
+            fullName: "Alexander Vance",
+            street: "742 Evergreen Terrace, Apt 4B",
+            city: "New York",
+            postalCode: "10021",
+            country: "United States"
+          },
+          {
+            id: "addr-002",
+            label: "Paris Atelier Studio",
+            isDefault: false,
+            fullName: "Alexander Vance",
+            street: "18 Rue du Faubourg Saint-Honoré",
+            city: "Paris",
+            postalCode: "75008",
+            country: "France"
+          }
+        ],
+        savedCards: [
+          {
+            id: "card-001",
+            cardType: "Visa",
+            lastFour: "4242",
+            holder: "ALEXANDER VANCE",
+            expiry: "12/28",
+            isDefault: true
+          }
+        ]
+      };
+      localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(defaultProfile));
     }
   }
 
@@ -206,6 +295,82 @@ class ApiService {
     localStorage.setItem(this.storageKeys.CART, JSON.stringify([]));
 
     return { success: true, order: generatedOrder };
+  }
+
+  /**
+   * Fetch all orders (customer order history)
+   */
+  async getOrders() {
+    if (this.useRemoteApi) {
+      const res = await fetch('/api/orders');
+      return await res.json();
+    }
+    return JSON.parse(localStorage.getItem(this.storageKeys.ORDERS)) || [];
+  }
+
+  /**
+   * User Profile Operations
+   */
+  async getUserProfile() {
+    if (this.useRemoteApi) {
+      const res = await fetch('/api/user/profile');
+      return await res.json();
+    }
+    return JSON.parse(localStorage.getItem(this.storageKeys.USER_PROFILE));
+  }
+
+  async updateUserProfile(updates) {
+    if (this.useRemoteApi) {
+      const res = await fetch('/api/user/profile', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      });
+      return await res.json();
+    }
+
+    let profile = await this.getUserProfile();
+    profile = { ...profile, ...updates };
+    localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(profile));
+    return { success: true, profile };
+  }
+
+  async addAddress(addressData) {
+    let profile = await this.getUserProfile();
+    const newAddr = {
+      id: 'addr-' + Date.now(),
+      isDefault: profile.addresses.length === 0,
+      ...addressData
+    };
+    profile.addresses.push(newAddr);
+    localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(profile));
+    return { success: true, address: newAddr, profile };
+  }
+
+  async deleteAddress(addressId) {
+    let profile = await this.getUserProfile();
+    profile.addresses = profile.addresses.filter(a => a.id !== addressId);
+    localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(profile));
+    return { success: true, profile };
+  }
+
+  async saveCard(cardData) {
+    let profile = await this.getUserProfile();
+    const newCard = {
+      id: 'card-' + Date.now(),
+      isDefault: profile.savedCards.length === 0,
+      ...cardData
+    };
+    profile.savedCards.push(newCard);
+    localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(profile));
+    return { success: true, card: newCard, profile };
+  }
+
+  async deleteCard(cardId) {
+    let profile = await this.getUserProfile();
+    profile.savedCards = profile.savedCards.filter(c => c.id !== cardId);
+    localStorage.setItem(this.storageKeys.USER_PROFILE, JSON.stringify(profile));
+    return { success: true, profile };
   }
 
   /**

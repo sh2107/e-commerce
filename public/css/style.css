@@ -908,3 +908,165 @@ h1, h2, h3, .font-editorial {
     font-size: 2.2rem;
   }
 }
+
+/* ==========================================================================
+   USER PROFILE & ACCOUNT PORTAL
+   ========================================================================== */
+.profile-hero {
+  background: linear-gradient(180deg, #F3EFE6 0%, var(--color-bg-base) 100%);
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--color-bg-dark);
+  color: #FAF9F6;
+  font-family: var(--font-editorial);
+  font-size: 1.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #FFFFFF;
+  box-shadow: var(--shadow-subtle);
+}
+
+.profile-nav-pill {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-main);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  transition: var(--transition-fast);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.profile-nav-pill:hover {
+  background: var(--color-bg-subtle);
+  border-color: var(--color-text-main);
+}
+
+.profile-nav-pill.active {
+  background: var(--color-bg-dark);
+  color: #FAF9F6;
+  border-color: var(--color-bg-dark);
+}
+
+.profile-nav-pill.active i {
+  color: var(--color-accent);
+}
+
+.profile-content-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.order-card-atelier {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.order-card-atelier:hover {
+  border-color: #D6D1C4;
+  box-shadow: var(--shadow-subtle);
+}
+
+.order-card-header {
+  background: #FAF9F6;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.order-thumb-mini {
+  width: 52px;
+  height: 68px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+}
+
+.badge-order-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.status-confirmed {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.status-transit {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.status-delivered {
+  background: #ECEFF1;
+  color: #37474F;
+}
+
+.address-card-box {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  background: #FAF9F6;
+  height: 100%;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.address-card-box:hover {
+  border-color: var(--color-text-main);
+  background: #FFFFFF;
+}
+
+.address-card-box.is-default {
+  border-color: var(--color-text-main);
+  background: #FFFFFF;
+}
+
+.loyalty-progress-container {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2E2A24 100%);
+  color: #FAF9F6;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.loyalty-progress-container::after {
+  content: 'ATELIER VIP';
+  position: absolute;
+  right: -10px;
+  bottom: -15px;
+  font-size: 4rem;
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
