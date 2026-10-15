@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉLÉVATION ATELIER | Luxury Contemporary Apparel & Prêt-à-Porter</title>
+  <meta name="description" content="Discover architectural tailoring, virgin wool coats, Scottish cashmere, and fluid silk pieces handcrafted with timeless European craftsmanship.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>É</text></svg>">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom Luxury Design Tokens & Styling -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-none d-md-block">
+        <span class="badge bg-secondary me-2 text-uppercase" style="font-size: 0.65rem;">AW/26</span>
+        <span>Complimentary Express Delivery on Orders Over $150</span>
+      </div>
+      <div class="mx-auto mx-md-0 text-center">
+        <span>The Autumn Atelier Drop is Now Live</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <label for="currency-selector" class="visually-hidden">Currency</label>
+        <select id="currency-selector" class="currency-select" aria-label="Select Currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+        <span class="d-none d-sm-inline">|</span>
+        <a href="#lookbook-section" class="text-white text-decoration-none d-none d-sm-inline">Atelier Journal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-atelier" id="mainNavbar">
+      <div class="container">
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler border-0 p-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2 text-dark"></i>
+        </button>
+
+        <!-- Brand Logo -->
+        <a class="navbar-brand d-flex align-items-center me-4" href="/">
+          <span class="brand-monogram">É</span>
+          <div>
+            <span class="brand-title">ÉLÉVATION</span>
+            <span class="brand-subtitle">Atelier Paris • New York</span>
+          </div>
+        </a>
+
+        <!-- Category Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier nav-link-category active" href="#catalog-section" data-category="all">All Creations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier nav-link-category" href="#catalog-section" data-category="women">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier nav-link-category" href="#catalog-section" data-category="men">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier nav-link-category" href="#catalog-section" data-category="outerwear">Outerwear</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier nav-link-category" href="#catalog-section" data-category="knitwear">Knitwear</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-atelier" href="#lookbook-section">Lookbook</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Action Icons (Search, Wishlist, Cart) -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- Search Button Trigger -->
+          <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#modalSearch" title="Search Garments (Cmd + K)">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <!-- Wishlist Offcanvas Trigger -->
+          <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWishlist" title="View Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="badge-count" id="wishlist-badge-count" style="display: none;">0</span>
+          </button>
+
+          <!-- Shopping Cart Offcanvas Trigger -->
+          <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" title="Shopping Bag">
+            <i class="bi bi-bag"></i>
+            <span class="badge-count" id="cart-badge-count" style="display: none;">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Editorial Showcase Section -->
+    <section class="hero-editorial">
+      <div class="container">
+        <div class="hero-card">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="hero-content">
+                <span class="hero-tag">The Autumn Atelier Drop • Limited Edition</span>
+                <h1 class="hero-title">Timeless Drape, Architectural Cut.</h1>
+                <p class="hero-desc">
+                  Sculpted in double-faced Italian virgin wool, Scottish cashmere, and raw mulberry silk. Designed for effortless modern silhouettes that outlast seasonal trends.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="#catalog-section" class="btn btn-atelier-dark">
+                    Explore Drop 04 <i class="bi bi-arrow-right"></i>
+                  </a>
+                  <button class="btn btn-atelier-outline" onclick="catalogApp.openQuickView('prod-001')">
+                    <i class="bi bi-eye"></i> Inspect Hero Trench
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="hero-img-wrap">
+                <img src="/assets/images/hero-coat.jpg" alt="Editorial Wool Trench Coat" class="hero-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Features Strip -->
+    <section class="features-strip">
+      <div class="container">
+        <div class="row g-3 text-center text-md-start">
+          <div class="col-6 col-md-3">
+            <div class="feature-item justify-content-center justify-content-md-start">
+              <i class="bi bi-gem"></i>
+              <span>Artisanal Italian Mills</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="feature-item justify-content-center justify-content-md-start">
+              <i class="bi bi-truck"></i>
+              <span>Express Carbon-Neutral Delivery</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="feature-item justify-content-center justify-content-md-start">
+              <i class="bi bi-arrow-repeat"></i>
+              <span>30-Day Complimentary Returns</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="feature-item justify-content-center justify-content-md-start">
+              <i class="bi bi-shield-check"></i>
+              <span>Lifetime Craftsmanship Warranty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog & Browsing Section -->
+    <section class="py-4" id="catalog-section">
+      <div class="container">
+        <!-- Category Navigation Pills -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+          <button class="category-pill active" data-category="all">All Pieces</button>
+          <button class="category-pill" data-category="women">Women</button>
+          <button class="category-pill" data-category="men">Men</button>
+          <button class="category-pill" data-category="outerwear">Outerwear</button>
+          <button class="category-pill" data-category="knitwear">Knitwear</button>
+          <button class="category-pill" data-category="accessories">Accessories</button>
+        </div>
+
+        <!-- Filter & Sort Bar -->
+        <div class="filter-sort-bar d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div class="d-flex align-items-center gap-3">
+            <!-- Filter Offcanvas Trigger -->
+            <button class="btn btn-sm btn-outline-dark d-flex align-items-center gap-2 rounded-pill px-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters">
+              <i class="bi bi-sliders"></i> Filter Options
+            </button>
+            <span class="text-muted small" id="product-count-display">Showing 8 pieces</span>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <!-- Admin Preview Switch -->
+            <div class="form-check form-switch small d-none d-md-flex align-items-center gap-2 m-0">
+              <input class="form-check-input" type="checkbox" id="admin-mode-toggle">
+              <label class="form-check-label text-muted" for="admin-mode-toggle" style="font-size: 0.78rem;">Admin Mode</label>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="d-flex align-items-center gap-2">
+              <label for="sort-products-select" class="text-muted small text-nowrap d-none d-sm-inline">Sort by:</label>
+              <select class="sort-select" id="sort-products-select">
+                <option value="featured">Editorial Highlights</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="newest">New Arrivals</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row g-4" id="products-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Lookbook Banner Section -->
+    <section class="py-5 mt-4 bg-atelier-dark text-white" id="lookbook-section">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="badge bg-white text-dark mb-3 text-uppercase" style="letter-spacing: 0.15em;">The Philosophy</span>
+            <h2 class="font-editorial display-5 mb-3">Quiet Luxury, Sustainable Integrity.</h2>
+            <p class="text-muted mb-4" style="color: #A3A099 !important; font-size: 1.05rem;">
+              Every seam is considered. We work with family-owned mills in Biella, Florence, and the Scottish Highlands to weave natural fibers that age with grace and character.
+            </p>
+            <div class="d-flex gap-4 border-top border-secondary pt-4 mt-2">
+              <div>
+                <h4 class="font-editorial mb-0 text-white">100%</h4>
+                <span class="small text-muted" style="color: #A3A099 !important;">Traceable Fibers</span>
+              </div>
+              <div>
+                <h4 class="font-editorial mb-0 text-white">Zero</h4>
+                <span class="small text-muted" style="color: #A3A099 !important;">Synthetic Microplastics</span>
+              </div>
+              <div>
+                <h4 class="font-editorial mb-0 text-white">Crafted</h4>
+                <span class="small text-muted" style="color: #A3A099 !important;">To Endure Decades</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-6">
+                <img src="/assets/images/charcoal-blazer.jpg" alt="Tailored Blazer" class="img-fluid rounded shadow-lg" style="height: 380px; width: 100%; object-fit: cover;">
+              </div>
+              <div class="col-6">
+                <img src="/assets/images/cashmere-knit.jpg" alt="Cashmere Knit" class="img-fluid rounded shadow-lg" style="height: 380px; width: 100%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       MODALS & OFFCANVAS DRAWERS
+       ========================================================================= -->
+
+  <!-- Slide-Over Shopping Bag (Offcanvas Cart) -->
+  <div class="offcanvas offcanvas-end offcanvas-atelier" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title font-editorial" id="offcanvasCartLabel">
+        Shopping Bag
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="free-shipping-progress">
+      <div class="small" id="shipping-progress-text">
+        Complimentary shipping on orders over <strong>$150.00</strong>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Body -->
+    <div class="offcanvas-body p-4 d-flex flex-column">
+      <!-- Items Container -->
+      <div id="cart-items-container" class="flex-grow-1 overflow-y-auto">
+        <!-- Rendered by cart.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="cart-empty-state" class="text-center py-5 d-none">
+        <i class="bi bi-bag-x fs-1 text-muted"></i>
+        <h5 class="font-editorial mt-3 mb-2">Your Bag is Empty</h5>
+        <p class="text-muted small">Explore our latest drops and curate your wardrobe.</p>
+        <button class="btn btn-atelier-dark btn-sm mt-2" data-bs-dismiss="offcanvas">
+          Browse Collection
+        </button>
+      </div>
+
+      <!-- Footer & Checkout Trigger -->
+      <div class="offcanvas-footer mt-auto" id="cart-footer-content">
+        <!-- Promo Code Input -->
+        <div class="mb-3">
+          <div class="input-group input-group-sm">
+            <input type="text" id="input-promo-code" class="form-control" placeholder="Promo code (e.g. VIP20, ATELIER10)" aria-label="Promo code">
+            <button class="btn btn-dark" type="button" id="btn-apply-promo">Apply</button>
+          </div>
+          <div id="promo-feedback-msg"></div>
+        </div>
+
+        <!-- Totals Calculation -->
+        <div class="d-flex justify-content-between mb-1 small text-muted">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="d-flex justify-content-between mb-1 small text-success d-none" id="cart-discount-row">
+          <span>Promotional Savings</span>
+          <span id="cart-discount-val">-$0.00</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2 small text-muted">
+          <span>Delivery</span>
+          <span id="cart-shipping">Calculated at next step</span>
+        </div>
+        <div class="d-flex justify-content-between mb-3 pt-2 border-top fw-bold">
+          <span class="font-editorial fs-6">Estimated Total</span>
+          <span class="fs-6" id="cart-grand-total">$0.00</span>
+        </div>
+
+        <button class="btn btn-atelier-dark w-100 py-3" id="btn-proceed-checkout">
+          Proceed to Checkout <i class="bi bi-lock-fill ms-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-Over Wishlist Drawer -->
+  <div class="offcanvas offcanvas-end offcanvas-atelier" tabindex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasWishlistLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title font-editorial" id="offcanvasWishlistLabel">
+        Saved Pieces
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4">
+      <div id="wishlist-items-container">
+        <!-- Rendered by wishlist.js -->
+      </div>
+      <div id="wishlist-empty-state" class="text-center py-5 d-none">
+        <i class="bi bi-heart fs-1 text-muted"></i>
+        <h5 class="font-editorial mt-3 mb-2">No Saved Pieces Yet</h5>
+        <p class="text-muted small">Tap the heart on any garment to save it for later.</p>
+        <button class="btn btn-atelier-dark btn-sm mt-2" data-bs-dismiss="offcanvas">
+          Discover Drops
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Faceted Filter Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title font-editorial" id="offcanvasFiltersLabel">Filter Collection</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4">
+      <!-- Max Price Range -->
+      <div class="mb-4">
+        <label class="form-label fw-bold small text-uppercase" style="letter-spacing: 0.1em;">Max Budget: <span id="filter-price-display" class="text-dark">$500</span></label>
+        <input type="range" class="form-range" id="filter-price-slider" min="50" max="500" step="10" value="500">
+        <div class="d-flex justify-content-between text-muted small">
+          <span>$50</span>
+          <span>$500</span>
+        </div>
+      </div>
+
+      <!-- Size Filter Pills -->
+      <div class="mb-4">
+        <label class="form-label fw-bold small text-uppercase" style="letter-spacing: 0.1em;">Garment Size</label>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="XS">XS</button>
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="S">S</button>
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="M">M</button>
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="L">L</button>
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="XL">XL</button>
+          <button class="btn btn-sm btn-outline-secondary filter-size-btn" data-size="XXL">XXL</button>
+        </div>
+      </div>
+
+      <!-- Fit Type Filter -->
+      <div class="mb-4">
+        <label class="form-label fw-bold small text-uppercase" style="letter-spacing: 0.1em;">Silhouette / Fit</label>
+        <div class="d-flex flex-wrap gap-2">
+          <button class="btn btn-sm btn-outline-secondary filter-fit-btn" data-fit="Oversized">Oversized</button>
+          <button class="btn btn-sm btn-outline-secondary filter-fit-btn" data-fit="Tailored">Tailored</button>
+          <button class="btn btn-sm btn-outline-secondary filter-fit-btn" data-fit="Relaxed">Relaxed</button>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 pt-3 border-top">
+        <button class="btn btn-dark" data-bs-dismiss="offcanvas">Apply Filters</button>
+        <button class="btn btn-outline-secondary" id="btn-reset-filters">Reset All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View / Product Detail Page Modal -->
+  <div class="modal fade modal-atelier" id="modalQuickView" tabindex="-1" aria-labelledby="modalQuickViewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <span class="badge bg-light text-dark border">ÉLÉVATION ATELIER SPECIFICATION</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="row g-4 g-lg-5">
+            <!-- Left: Gallery -->
+            <div class="col-lg-6">
+              <img id="pdp-main-image" src="/assets/images/hero-coat.jpg" alt="Garment preview" class="pdp-gallery-main mb-3">
+              <div class="d-flex gap-2" id="pdp-thumbnails-container">
+                <!-- Thumbnails rendered here -->
+              </div>
+            </div>
+
+            <!-- Right: Details & Purchase Matrix -->
+            <div class="col-lg-6 d-flex flex-column">
+              <div class="mb-2 text-muted small" id="pdp-modal-rating">
+                <i class="bi bi-star-fill text-warning"></i> 5.0 (42 reviews)
+              </div>
+              <h2 class="font-editorial mb-2" id="pdp-modal-title">The Garment Title</h2>
+              <div class="d-flex align-items-baseline gap-2 mb-3">
+                <span class="fs-4 fw-bold" id="pdp-modal-price">$0.00</span>
+                <span class="text-muted text-decoration-line-through d-none" id="pdp-modal-compare-price">$0.00</span>
+              </div>
+
+              <p class="fst-italic text-muted-custom mb-3" id="pdp-modal-tagline"></p>
+              <p class="small text-secondary mb-4" id="pdp-modal-desc"></p>
+
+              <!-- Color Palette -->
+              <div class="mb-3">
+                <label class="small text-uppercase fw-bold text-muted mb-2 d-block">
+                  Colorway: <span class="text-dark fw-semibold" id="pdp-selected-color-label">Selected Color</span>
+                </label>
+                <div class="d-flex gap-2" id="pdp-colors-container"></div>
+              </div>
+
+              <!-- Size Matrix -->
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <label class="small text-uppercase fw-bold text-muted m-0">Select Size</label>
+                  <button class="btn btn-link p-0 text-dark small text-decoration-underline" data-bs-toggle="modal" data-bs-target="#modalSizeGuide">
+                    <i class="bi bi-rulers me-1"></i> Size Guide
+                  </button>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-2" id="pdp-sizes-container"></div>
+                <div id="pdp-stock-notice" class="small"></div>
+              </div>
+
+              <!-- Quantity & Add to Bag -->
+              <div class="d-flex gap-3 my-4">
+                <div class="quantity-stepper" style="height: 48px;">
+                  <button class="quantity-btn px-3" onclick="const q=document.getElementById('pdp-quantity-input'); if(q.value>1) q.value--;">-</button>
+                  <input type="number" id="pdp-quantity-input" class="quantity-val border-0 bg-transparent" value="1" min="1" max="10" readonly style="width: 38px;">
+                  <button class="quantity-btn px-3" onclick="const q=document.getElementById('pdp-quantity-input'); q.value++;">+</button>
+                </div>
+                <button class="btn btn-atelier-dark flex-grow-1 py-3" onclick="catalogApp.addActiveProductToBag()">
+                  <i class="bi bi-bag-plus me-2"></i> Add to Bag
+                </button>
+              </div>
+
+              <button class="btn btn-outline-secondary w-100 btn-sm mb-4" id="pdp-modal-wishlist-btn">
+                <i class="bi bi-heart me-2"></i> Save to Wishlist
+              </button>
+
+              <!-- Garment Accordions (Fabric, Care, Shipping) -->
+              <div class="accordion accordion-flush mt-auto" id="pdpAccordions">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold small" type="button" data-bs-toggle="collapse" data-bs-target="#acc-fabric">
+                      Material Composition & Drape
+                    </button>
+                  </h2>
+                  <div id="acc-fabric" class="accordion-collapse collapse" data-bs-parent="#pdpAccordions">
+                    <div class="accordion-body px-0 py-2 small text-muted">
+                      <ul class="mb-0 ps-3" id="pdp-materials-list"></ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed py-2 px-0 fw-semibold small" type="button" data-bs-toggle="collapse" data-bs-target="#acc-care">
+                      Care & Longevity
+                    </button>
+                  </h2>
+                  <div id="acc-care" class="accordion-collapse collapse" data-bs-parent="#pdpAccordions">
+                    <div class="accordion-body px-0 py-2 small text-muted">
+                      <ul class="mb-0 ps-3" id="pdp-care-list"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Predictive Search Modal (Cmd + K) -->
+  <div class="modal fade" id="modalSearch" tabindex="-1" aria-labelledby="modalSearchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-body p-4">
+          <div class="input-group input-group-lg border-bottom pb-2">
+            <span class="input-group-text bg-transparent border-0"><i class="bi bi-search fs-4"></i></span>
+            <input type="text" id="global-search-input" class="form-control bg-transparent border-0 fs-5" placeholder="Search by garment, fabric, fit, or category..." aria-label="Search">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="mt-3">
+            <div class="small text-muted mb-2 text-uppercase fw-bold" style="letter-spacing: 0.08em;">Trending Searches</div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-light text-dark p-2 cursor-pointer border" onclick="document.getElementById('global-search-input').value='Trench'; catalogApp.currentFilters.query='Trench'; catalogApp.renderProducts(); bootstrap.Modal.getInstance(document.getElementById('modalSearch')).hide();">Virgin Wool Trench</span>
+              <span class="badge bg-light text-dark p-2 cursor-pointer border" onclick="document.getElementById('global-search-input').value='Cashmere'; catalogApp.currentFilters.query='Cashmere'; catalogApp.renderProducts(); bootstrap.Modal.getInstance(document.getElementById('modalSearch')).hide();">Cashmere Knitwear</span>
+              <span class="badge bg-light text-dark p-2 cursor-pointer border" onclick="document.getElementById('global-search-input').value='Blazer'; catalogApp.currentFilters.query='Blazer'; catalogApp.renderProducts(); bootstrap.Modal.getInstance(document.getElementById('modalSearch')).hide();">Charcoal Blazer</span>
+              <span class="badge bg-light text-dark p-2 cursor-pointer border" onclick="document.getElementById('global-search-input').value='Silk'; catalogApp.currentFilters.query='Silk'; catalogApp.renderProducts(); bootstrap.Modal.getInstance(document.getElementById('modalSearch')).hide();">Mulberry Silk Slip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Step Checkout Modal -->
+  <div class="modal fade modal-atelier" id="modalCheckout" tabindex="-1" aria-labelledby="modalCheckoutLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-bottom">
+          <div class="d-flex align-items-center gap-3">
+            <h5 class="modal-title font-editorial mb-0">Secure Atelier Checkout</h5>
+            <div class="d-flex align-items-center gap-2 small">
+              <span class="badge rounded-pill bg-dark" id="step-indicator-1">1. Destination</span>
+              <i class="bi bi-chevron-right text-muted" style="font-size: 0.75rem;"></i>
+              <span class="badge rounded-pill bg-light text-dark" id="step-indicator-2">2. Shipping</span>
+              <i class="bi bi-chevron-right text-muted" style="font-size: 0.75rem;"></i>
+              <span class="badge rounded-pill bg-light text-dark" id="step-indicator-3">3. Payment</span>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="row g-4 g-lg-5">
+            <!-- Left Form Workflow -->
+            <div class="col-lg-7">
+              <!-- STEP 1: Shipping Address -->
+              <div id="checkout-step-1">
+                <h5 class="font-editorial mb-3">1. Contact & Delivery Destination</h5>
+                <form id="form-checkout-shipping" onsubmit="return false;">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label small fw-semibold">First Name</label>
+                      <input type="text" class="form-control" id="ship-firstname" required value="Alexander">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small fw-semibold">Last Name</label>
+                      <input type="text" class="form-control" id="ship-lastname" required value="Vance">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small fw-semibold">Email Address</label>
+                      <input type="email" class="form-control" id="ship-email" required value="a.vance@atelier-mail.com">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small fw-semibold">Phone Number</label>
+                      <input type="tel" class="form-control" id="ship-phone" required value="+1 (555) 019-2834">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label small fw-semibold">Street Address</label>
+                      <input type="text" class="form-control" id="ship-address" required value="742 Evergreen Terrace">
+                    </div>
+                    <div class="col-md-5">
+                      <label class="form-label small fw-semibold">City</label>
+                      <input type="text" class="form-control" id="ship-city" required value="New York">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label small fw-semibold">Postal Code</label>
+                      <input type="text" class="form-control" id="ship-postal" required value="10021">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label small fw-semibold">Country</label>
+                      <select class="form-select" id="ship-country">
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <button type="button" class="btn btn-atelier-dark w-100" id="btn-checkout-to-step-2">
+                      Continue to Delivery Options <i class="bi bi-arrow-right ms-1"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- STEP 2: Delivery Speed Selection -->
+              <div id="checkout-step-2" class="d-none">
+                <h5 class="font-editorial mb-3">2. Choose Delivery Method</h5>
+                <div class="d-flex flex-column gap-3 mb-4">
+                  <label class="checkout-card d-flex align-items-center justify-content-between cursor-pointer">
+                    <div class="d-flex align-items-center gap-3">
+                      <input type="radio" name="shippingOption" value="standard" checked class="form-check-input mt-0">
+                      <div>
+                        <div class="fw-semibold">Atelier Standard Delivery</div>
+                        <div class="text-muted small">3-5 business days • Signature upon arrival</div>
+                      </div>
+                    </div>
+                    <span class="fw-bold">$15.00 (or Free over $150)</span>
+                  </label>
+                  <label class="checkout-card d-flex align-items-center justify-content-between cursor-pointer">
+                    <div class="d-flex align-items-center gap-3">
+                      <input type="radio" name="shippingOption" value="express" class="form-check-input mt-0">
+                      <div>
+                        <div class="fw-semibold">Priority Air Courier (FedEx/DHL)</div>
+                        <div class="text-muted small">1-2 business days • Dedicated garment bag packaging</div>
+                      </div>
+                    </div>
+                    <span class="fw-bold">+$15.00 Priority</span>
+                  </label>
+                </div>
+                <div class="d-flex gap-3">
+                  <button type="button" class="btn btn-atelier-outline" id="btn-checkout-back-1">Back</button>
+                  <button type="button" class="btn btn-atelier-dark flex-grow-1" id="btn-checkout-to-step-3">
+                    Continue to Payment <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3: Payment details & Live Card Visualizer -->
+              <div id="checkout-step-3" class="d-none">
+                <h5 class="font-editorial mb-3">3. Payment & Authentication</h5>
+                
+                <!-- Live Interactive Card Preview -->
+                <div class="payment-card-visual">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span class="small text-uppercase tracking-wider">ÉLÉVATION MEMBER</span>
+                    <i class="bi bi-credit-card-2-front fs-4 text-warning"></i>
+                  </div>
+                  <div class="fs-5 fw-bold mb-4 font-monospace" id="card-visual-number">•••• •••• •••• ••••</div>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="small opacity-50" style="font-size: 0.65rem;">CARDHOLDER</div>
+                      <div class="small fw-semibold text-uppercase" id="card-visual-name">ALEXANDER VANCE</div>
+                    </div>
+                    <div>
+                      <div class="small opacity-50" style="font-size: 0.65rem;">EXPIRES</div>
+                      <div class="small fw-semibold" id="card-visual-expiry">12/28</div>
+                    </div>
+                  </div>
+                </div>
+
+                <form id="form-checkout-payment" onsubmit="return false;">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label small fw-semibold">Card Number</label>
+                      <input type="text" class="form-control" id="card-number" required placeholder="4242 4242 4242 4242" maxlength="19">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label small fw-semibold">Cardholder Name</label>
+                      <input type="text" class="form-control" id="card-holder" required placeholder="Alexander Vance">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label small fw-semibold">Expiry Date</label>
+                      <input type="text" class="form-control" id="card-expiry" required placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label small fw-semibold">CVC</label>
+                      <input type="password" class="form-control" id="card-cvc" required placeholder="•••" maxlength="4">
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3 mt-4">
+                    <button type="button" class="btn btn-atelier-outline" id="btn-checkout-back-2">Back</button>
+                    <button type="button" class="btn btn-atelier-dark flex-grow-1 py-3" id="btn-place-order">
+                      Authorize & Complete Order <i class="bi bi-shield-check ms-1"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right: Order Summary Sidebar -->
+            <div class="col-lg-5">
+              <div class="checkout-card">
+                <h6 class="font-editorial mb-3">Order Bag Summary</h6>
+                <div id="checkout-items-summary" class="mb-3" style="max-height: 240px; overflow-y: auto;">
+                  <!-- Rendered dynamically -->
+                </div>
+                <div class="border-top pt-2">
+                  <div class="d-flex justify-content-between small text-muted mb-1">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">$0.00</span>
+                  </div>
+                  <div class="d-flex justify-content-between small text-success mb-1 d-none">
+                    <span>Promotional Discount</span>
+                    <span id="summary-discount">-$0.00</span>
+                  </div>
+                  <div class="d-flex justify-content-between small text-muted mb-2">
+                    <span>Shipping</span>
+                    <span id="summary-shipping">FREE</span>
+                  </div>
+                  <div class="d-flex justify-content-between fw-bold pt-2 border-top">
+                    <span class="font-editorial">Grand Total</span>
+                    <span class="fs-5" id="summary-total">$0.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Confirmation & Receipt Modal -->
+  <div class="modal fade modal-atelier" id="modalReceipt" tabindex="-1" aria-labelledby="modalReceiptLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-4 p-md-5 text-center">
+          <div class="mb-3">
+            <span class="rounded-circle bg-success text-white p-3 d-inline-flex">
+              <i class="bi bi-check2 fs-1"></i>
+            </span>
+          </div>
+          <h2 class="font-editorial mb-1">Order Confirmed</h2>
+          <p class="text-muted small mb-4">
+            Thank you for shopping with ÉLÉVATION ATELIER. Your order confirmation and tracking credentials have been generated.
+          </p>
+
+          <!-- Order Summary Ticket -->
+          <div class="checkout-card text-start mb-4 p-4">
+            <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+              <div>
+                <span class="small text-muted d-block">ORDER REFERENCE</span>
+                <strong class="font-monospace fs-5" id="receipt-order-id">#ELV-849201</strong>
+              </div>
+              <div class="text-end">
+                <span class="small text-muted d-block">ORDER DATE</span>
+                <span class="small" id="receipt-date">October 15, 2026</span>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <span class="small text-muted d-block">DISPATCH TO</span>
+                <strong id="receipt-customer-name">Alexander Vance</strong>
+                <div class="small text-muted" id="receipt-customer-address">742 Evergreen Terrace, New York 10021</div>
+                <div class="small text-muted" id="receipt-customer-email">a.vance@atelier-mail.com</div>
+              </div>
+              <div class="col-sm-6">
+                <span class="small text-muted d-block">DISPATCH TIMELINE</span>
+                <div class="order-timeline-step">
+                  <div class="order-timeline-dot"></div>
+                  <strong class="small d-block">Order Confirmed</strong>
+                  <span class="small text-muted">Ready for tailoring packaging</span>
+                </div>
+                <div class="order-timeline-step">
+                  <div class="order-timeline-dot" style="background: #CCC;"></div>
+                  <strong class="small d-block">In Transit</strong>
+                  <span class="small text-muted">Estimated 2 business days</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Itemized List -->
+            <div id="receipt-items-container" class="border-top pt-2"></div>
+
+            <div class="d-flex justify-content-between pt-3 border-top mt-2">
+              <strong class="font-editorial fs-6">Paid Total</strong>
+              <strong class="fs-5" id="receipt-total">$0.00</strong>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-atelier-dark" data-bs-dismiss="modal">
+              Continue Shopping
+            </button>
+            <button class="btn btn-atelier-outline" onclick="window.print()">
+              <i class="bi bi-printer me-1"></i> Print Invoice
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Size Guide Modal -->
+  <div class="modal fade" id="modalSizeGuide" tabindex="-1" aria-labelledby="modalSizeGuideLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title font-editorial" id="modalSizeGuideLabel">Atelier Size & Measurement Guide</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="table-responsive">
+            <table class="table table-bordered text-center small">
+              <thead class="table-light">
+                <tr>
+                  <th>Size</th>
+                  <th>Chest (in)</th>
+                  <th>Waist (in)</th>
+                  <th>Hips (in)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>XS</strong></td><td>34 - 36</td><td>28 - 30</td><td>35 - 37</td></tr>
+                <tr><td><strong>S</strong></td><td>36 - 38</td><td>30 - 32</td><td>37 - 39</td></tr>
+                <tr><td><strong>M</strong></td><td>38 - 40</td><td>32 - 34</td><td>39 - 41</td></tr>
+                <tr><td><strong>L</strong></td><td>40 - 42</td><td>34 - 36</td><td>41 - 43</td></tr>
+                <tr><td><strong>XL</strong></td><td>42 - 44</td><td>36 - 38</td><td>43 - 45</td></tr>
+                <tr><td><strong>XXL</strong></td><td>44 - 46</td><td>38 - 40</td><td>45 - 47</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small text-muted mb-0">
+            <em>Measurements refer to body size, not garment dimensions. All outerwear silhouettes feature relaxed ease for layering over knitwear.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-atelier">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center mb-3">
+            <span class="brand-monogram">É</span>
+            <span class="brand-title text-white">ÉLÉVATION</span>
+          </div>
+          <p class="small" style="color: #9B9890; max-width: 320px;">
+            Modern architectural apparel designed in Paris and handcrafted across artisanal European ateliers.
+          </p>
+          <div class="d-flex gap-3 fs-5 mt-3">
+            <a href="javascript:void(0)" class="text-white opacity-75"><i class="bi bi-instagram"></i></a>
+            <a href="javascript:void(0)" class="text-white opacity-75"><i class="bi bi-pinterest"></i></a>
+            <a href="javascript:void(0)" class="text-white opacity-75"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase small fw-bold text-white mb-3" style="letter-spacing: 0.1em;">Collections</h6>
+          <ul class="list-unstyled">
+            <li><a href="#catalog-section" class="footer-link">Autumn Atelier</a></li>
+            <li><a href="#catalog-section" class="footer-link">Virgin Wool Outerwear</a></li>
+            <li><a href="#catalog-section" class="footer-link">Scottish Cashmere</a></li>
+            <li><a href="#catalog-section" class="footer-link">Mulberry Silk</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-uppercase small fw-bold text-white mb-3" style="letter-spacing: 0.1em;">Customer Care</h6>
+          <ul class="list-unstyled">
+            <li><a href="javascript:void(0)" class="footer-link">Bespoke Fitting</a></li>
+            <li><a href="javascript:void(0)" class="footer-link">Shipping & Customs</a></li>
+            <li><a href="javascript:void(0)" class="footer-link">Returns Policy</a></li>
+            <li><a href="javascript:void(0)" class="footer-link">Sustainability Report</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="text-uppercase small fw-bold text-white mb-3" style="letter-spacing: 0.1em;">Atelier Gazette</h6>
+          <p class="small" style="color: #9B9890;">
+            Subscribe to receive private preview drop invites and editorial stories.
+          </p>
+          <div class="input-group">
+            <input type="email" class="form-control newsletter-input" placeholder="Your email address" aria-label="Your email">
+            <button class="btn btn-light rounded-pill px-4 ms-2" type="button" onclick="cartEngine.showToast('Thank you for subscribing to the Atelier Gazette.', 'success')">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-4 border-top border-secondary small text-muted" style="border-color: rgba(255,255,255,0.08) !important;">
+        <div>&copy; 2026 ÉLÉVATION ATELIER INC. All rights reserved. Decoupled Architecture.</div>
+        <div class="d-flex gap-3 fs-5 mt-2 mt-md-0">
+          <i class="bi bi-credit-card"></i>
+          <i class="bi bi-apple"></i>
+          <i class="bi bi-shield-check"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3.3 Bundle with Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Application Modular Scripts -->
+  <script src="/js/data.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/wishlist.js"></script>
+  <script src="/js/checkout.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
